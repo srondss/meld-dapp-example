@@ -1,8 +1,6 @@
 import { Box, Stack, TextField, Typography } from "@mui/material";
 import {
     ContractEvent,
-    ContractEvents,
-    Transaction,
     Web3Button,
     toWei,
     useContract,
@@ -21,7 +19,6 @@ export const InteractWithContract = () => {
     const [contractData, setContractData] = useState({
         totalSupply: "",
         maxSupply: "",
-        // give events the correct type
         events: [] as ContractEvent<Record<string, any>>[],
     });
 
@@ -38,7 +35,6 @@ export const InteractWithContract = () => {
                         return event.eventName === "PurchaseOccurred";
                     }
                 );
-                console.log("events:", events);
 
                 setContractData({
                     totalSupply: ethers.utils.formatEther(
