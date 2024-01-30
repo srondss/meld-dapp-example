@@ -14,7 +14,7 @@ import { ethers } from "ethers";
 
 export const InteractWithContract = () => {
     const { contract, refetch } = useContract(
-        "0xD69e7dBBB40170Db8CF24aDE86Ee3813A3E84dFC",
+        "YOUR_DEPLOYED_CONTRACT_ADDRESS",
         MintableERC20.abi
     );
 
@@ -78,7 +78,7 @@ export const InteractWithContract = () => {
                             }}
                         />
                         <Web3Button
-                            contractAddress="0xD69e7dBBB40170Db8CF24aDE86Ee3813A3E84dFC"
+                            contractAddress="YOUR_DEPLOYED_CONTRACT_ADDRESS"
                             contractAbi={MintableERC20.abi}
                             action={async (mintContract) => {
                                 const receipt = await mintContract.call(
